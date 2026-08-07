@@ -2,6 +2,7 @@
 
 **Company / Org:** Break Through Tech  
 **Challenge Advisor:** Tom Mathews, tom.mathews@nyu.edu  
+**AI Studio Coach:** Ayush Amberkar, ayush.amberkar@breakthroughtech.org     
 **Program:** Break Through Tech AI Studio - Fall 2026
 
 ---
