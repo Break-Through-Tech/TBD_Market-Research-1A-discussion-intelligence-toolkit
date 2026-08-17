@@ -1,9 +1,8 @@
----
-
 # Discussion Intelligence Toolkit
 
 **Company / Org:** Break Through Tech  
 **Challenge Advisor:** Tom Mathews, tom.mathews@nyu.edu  
+**AI Studio Coach:** Ayush Amberkar, ayush.amberkar@breakthroughtech.org     
 **Program:** Break Through Tech AI Studio - Fall 2026
 
 ---
@@ -186,8 +185,8 @@ The resources below are enough to start productively without overloading the fir
 
 ## 🤝 How We'll Work Together
 
-**Check-ins:** During our biweekly 60-minute AI Studio Lab Section meeting block (2nd and 4th week of every month)  
-**Communication:** Slack (Break Through Tech workspace) or email  
+**Check-ins:** During our biweekly 45-minute AI Studio Lab Section meeting block (2nd and 4th week of every month)  
+**Communication:** Discord (Break Through Tech workspace) or email  
 **Response time:** Within 48 hours on weekdays
 
 **Recommended Tools**
