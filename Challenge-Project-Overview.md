@@ -1,15 +1,18 @@
 # Discussion Intelligence Toolkit
 
-**Company / Org:** Break Through Tech  
-**Challenge Advisor:** Tom Mathews, tom.mathews@nyu.edu  
-**AI Studio Coach:** Ayush Amberkar, ayush.amberkar@breakthroughtech.org     
-**Program:** Break Through Tech AI Studio - Fall 2026
+- **Challenge Sponsor:** Independent doctoral research project
+- **Challenge Advisor:** Tom Mathews, Doctoral Student, tom.mathews@nyu.edu
+- **AI Studio Coach:** Ayush Amberkar, ayush.amberkar@breakthroughtech.org
+- **Industry:** Applied Artificial Intelligence and Data Science
+- **Program:** Break Through Tech AI Studio - Fall 2026
 
 ---
 
-## 🏢 About Break Through Tech
+## 🏢 About This Industry
 
-Break Through Tech increases the representation of women and underrepresented groups in technology through training, mentorship, job placement, and community building. This project gives fellows a chance to build a real NLP system with clear technical scope, measurable outcomes, and a public portfolio artifact they can explain to future employers.
+Applied artificial intelligence and data science turn unstructured information into reliable, decision-ready evidence. Practitioners combine data engineering, machine learning, information retrieval, and human review to build systems that support work in domains such as market research, product development, community operations, and research.
+
+This challenge uses discussion intelligence as a concrete market-research application, but its primary purpose is to teach reusable AI engineering skills: modeling structured conversation data, retrieving supporting evidence, evaluating outputs, and communicating limitations.
 
 ---
 
@@ -79,9 +82,18 @@ Use these milestones to guide your work. Your team should maintain a GitHub Proj
 
 | Dataset / Source | Purpose in Project | Format | Access |
 |---|---|---|---|
-| **ConvoKit Coarse Discourse Corpus** | Supervised discourse-act classification on Reddit-style conversations | ConvoKit corpus / JSON-like utterance records | https://convokit.cornell.edu/documentation/ |
-| **ConvoKit conversation corpora such as CGA / ChangeMyView-derived discussions** | Quality, argumentation, or discussion-outcome modeling | ConvoKit corpus / JSON-like utterance records | https://convokit.cornell.edu/documentation/ |
-| **Public Reddit thread archives or filtered Pushshift-style Reddit exports** | End-to-end ingestion, clustering, retrieval, and report generation | JSON / JSONL / CSV after preprocessing | Team should document exact source and subset used in `README.md` |
+| **ConvoKit Coarse Discourse Sequence Corpus** | Initial threaded-discussion path and supervised discourse-act classification | ConvoKit corpus / JSON-like utterance records | https://convokit.cornell.edu/documentation/coarseDiscourse.html |
+| **ConvoKit Conversations Gone Awry — ChangeMyView** | Conversation-quality and derailment modeling | ConvoKit corpus / JSON-like utterance records | https://convokit.cornell.edu/documentation/ |
+| **Parent-preserving static thread export** | Future end-to-end ingestion, clustering, retrieval, and report generation | JSON / JSONL / CSV after schema validation | The selected export must retain `parent_id`; see `data/README.md` |
+
+### Project Data Access
+
+This repository uses a two-tier data model documented in [`data/README.md`](data/README.md):
+
+1. **Tracked reference data:** [`data/coarse-discourse-reference-sample.jsonl`](data/coarse-discourse-reference-sample.jsonl) contains two complete, source-derived Reddit conversations with reply relationships and discourse-act labels. It is intentionally small enough for schema inspection and smoke tests.
+2. **Reproducible complete corpora:** ConvoKit's [Coarse Discourse Sequence Corpus](https://convokit.cornell.edu/documentation/coarseDiscourse.html) supplies the initial threaded-discussion dataset and discourse labels; ConvoKit's Conversations Gone Awry — ChangeMyView corpus supports quality modeling. The full corpora are downloaded on demand and are not committed to this repository.
+
+The prepared Pushshift candidates are not approved for the current connector: their published comments schema does not expose `parent_id`, which is required to reconstruct nested replies. Select and validate a parent-preserving static export before using a bulk Reddit corpus for end-to-end analysis.
 
 ### Working Dataset Expectations
 - Do **not** try to process the full public Reddit archive. Select a domain-specific subset that fits a student workflow.
