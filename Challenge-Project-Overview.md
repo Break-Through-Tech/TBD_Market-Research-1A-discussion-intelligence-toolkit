@@ -80,9 +80,18 @@ Use these milestones to guide your work. Your team should maintain a GitHub Proj
 
 | Dataset / Source | Purpose in Project | Format | Access |
 |---|---|---|---|
-| **ConvoKit Coarse Discourse Corpus** | Supervised discourse-act classification on Reddit-style conversations | ConvoKit corpus / JSON-like utterance records | https://convokit.cornell.edu/documentation/ |
-| **ConvoKit conversation corpora such as CGA / ChangeMyView-derived discussions** | Quality, argumentation, or discussion-outcome modeling | ConvoKit corpus / JSON-like utterance records | https://convokit.cornell.edu/documentation/ |
-| **Public Reddit thread archives or filtered Pushshift-style Reddit exports** | End-to-end ingestion, clustering, retrieval, and report generation | JSON / JSONL / CSV after preprocessing | Team should document exact source and subset used in `README.md` |
+| **ConvoKit Coarse Discourse Sequence Corpus** | Initial threaded-discussion path and supervised discourse-act classification | ConvoKit corpus / JSON-like utterance records | https://convokit.cornell.edu/documentation/coarseDiscourse.html |
+| **ConvoKit Conversations Gone Awry — ChangeMyView** | Conversation-quality and derailment modeling | ConvoKit corpus / JSON-like utterance records | https://convokit.cornell.edu/documentation/ |
+| **Parent-preserving static thread export** | Future end-to-end ingestion, clustering, retrieval, and report generation | JSON / JSONL / CSV after schema validation | The selected export must retain `parent_id`; see `data/README.md` |
+
+### Project Data Access
+
+This repository uses a two-tier data model documented in [`data/README.md`](data/README.md):
+
+1. **Tracked reference data:** [`data/coarse-discourse-reference-sample.jsonl`](data/coarse-discourse-reference-sample.jsonl) contains two complete, source-derived Reddit conversations with reply relationships and discourse-act labels. It is intentionally small enough for schema inspection and smoke tests.
+2. **Reproducible complete corpora:** ConvoKit's [Coarse Discourse Sequence Corpus](https://convokit.cornell.edu/documentation/coarseDiscourse.html) supplies the initial threaded-discussion dataset and discourse labels; ConvoKit's Conversations Gone Awry — ChangeMyView corpus supports quality modeling. The full corpora are downloaded on demand and are not committed to this repository.
+
+The prepared Pushshift candidates are not approved for the current connector: their published comments schema does not expose `parent_id`, which is required to reconstruct nested replies. Select and validate a parent-preserving static export before using a bulk Reddit corpus for end-to-end analysis.
 
 ### Working Dataset Expectations
 - Do **not** try to process the full public Reddit archive. Select a domain-specific subset that fits a student workflow.
