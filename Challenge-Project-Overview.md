@@ -1,15 +1,18 @@
 # Discussion Intelligence Toolkit
 
-**Company / Org:** Break Through Tech  
-**Challenge Advisor:** Tom Mathews, tom.mathews@nyu.edu  
-**AI Studio Coach:** Ayush Amberkar, ayush.amberkar@breakthroughtech.org     
-**Program:** Break Through Tech AI Studio - Fall 2026
+- **Challenge Sponsor:** Independent doctoral research project
+- **Challenge Advisor:** Tom Mathews, Doctoral Student, tom.mathews@nyu.edu
+- **AI Studio Coach:** Ayush Amberkar, ayush.amberkar@breakthroughtech.org
+- **Industry:** Applied Artificial Intelligence and Data Science
+- **Program:** Break Through Tech AI Studio - Fall 2026
 
 ---
 
-## 🏢 About Break Through Tech
+## 🏢 About This Industry
 
-Break Through Tech increases the representation of women and underrepresented groups in technology through training, mentorship, job placement, and community building. This project gives fellows a chance to build a real NLP system with clear technical scope, measurable outcomes, and a public portfolio artifact they can explain to future employers.
+Applied artificial intelligence and data science turn unstructured information into reliable, decision-ready evidence. Practitioners combine data engineering, machine learning, information retrieval, and human review to build systems that support work in domains such as market research, product development, community operations, and research.
+
+This challenge uses discussion intelligence as a concrete market-research application, but its primary purpose is to teach reusable AI engineering skills: modeling structured conversation data, retrieving supporting evidence, evaluating outputs, and communicating limitations.
 
 ---
 
