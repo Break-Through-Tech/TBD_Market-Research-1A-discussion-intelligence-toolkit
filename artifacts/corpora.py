@@ -151,7 +151,7 @@ class CoarseDiscourseLoader:
     Splits are produced by hashing `conversation_id` to keep threads intact.
     """
 
-    NAME = "coarse-discourse-corpus"
+    NAME = "reddit-coarse-discourse-corpus"
     DROP_LABELS: frozenset[str] = frozenset({"other"})
 
     def __init__(
